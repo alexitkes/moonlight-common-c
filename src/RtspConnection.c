@@ -676,7 +676,7 @@ int performRtspHandshake(void) {
 
     // Initialize global state
     useEnet = (AppVersionQuad[0] >= 5) && (AppVersionQuad[0] <= 7) && (AppVersionQuad[2] < 404);
-    sprintf(rtspTargetUrl, "rtsp%s://%s:%u", useEnet ? "ru" : "", urlAddr, RtspPortNumber);
+    sprintf(rtspTargetUrl, "rtsp%s://%s:%d", useEnet ? "ru" : "", urlAddr, get_port_redirect(RtspPortNumber));
     currentSeqNumber = 1;
     hasSessionId = false;
     controlStreamId = APP_VERSION_AT_LEAST(7, 1, 431) ? "streamid=control/13/0" : "streamid=control/1/0";
