@@ -34,6 +34,9 @@ extern "C" {
 #define ENCFLG_AUDIO 0x00000001
 #define ENCFLG_ALL   0xFFFFFFFF
 
+int set_port_redirect(int original, int custom);
+int get_port_redirect(int original);
+
 typedef struct _STREAM_CONFIGURATION {
     // Dimensions in pixels of the desired video stream
     int width;
