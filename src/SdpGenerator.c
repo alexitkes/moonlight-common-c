@@ -134,7 +134,7 @@ static int addGen4Options(PSDP_OPTION* head, char* addrStr) {
     int err = 0;
 
     LC_ASSERT(RtspPortNumber != 0);
-    sprintf(payloadStr, "rtsp://%s:%u", addrStr, RtspPortNumber);
+    sprintf(payloadStr, "rtsp://%s:%u", addrStr, get_port_redirect(RtspPortNumber));
     err |= addAttributeString(head, "x-nv-general.serverAddress", payloadStr);
 
     return err;

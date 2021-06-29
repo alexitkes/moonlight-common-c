@@ -1145,7 +1145,7 @@ int startControlStream(void) {
         LC_ASSERT(ControlPortNumber != 0);
 
         enet_address_set_address(&address, (struct sockaddr *)&RemoteAddr, RemoteAddrLen);
-        enet_address_set_port(&address, ControlPortNumber);
+        enet_address_set_port(&address, get_port_redirect(ControlPortNumber));
 
         // Create a client that can use 1 outgoing connection and 1 channel
         client = enet_host_create(address.address.ss_family, NULL, 1, 1, 0, 0);

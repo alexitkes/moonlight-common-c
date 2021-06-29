@@ -326,12 +326,12 @@ int LiStartConnection(PSERVER_INFORMATION serverInfo, PSTREAM_CONFIGURATION stre
 
     Limelog("Resolving host name...");
     ListenerCallbacks.stageStarting(STAGE_NAME_RESOLUTION);
-    err = resolveHostName(serverInfo->address, AF_UNSPEC, 47984, &RemoteAddr, &RemoteAddrLen);
+    err = resolveHostName(serverInfo->address, AF_UNSPEC, get_port_redirect(47984), &RemoteAddr, &RemoteAddrLen);
     if (err != 0) {
-        err = resolveHostName(serverInfo->address, AF_UNSPEC, 47989, &RemoteAddr, &RemoteAddrLen);
+        err = resolveHostName(serverInfo->address, AF_UNSPEC, get_port_redirect(47989), &RemoteAddr, &RemoteAddrLen);
     }
     if (err != 0) {
-        err = resolveHostName(serverInfo->address, AF_UNSPEC, 48010, &RemoteAddr, &RemoteAddrLen);
+        err = resolveHostName(serverInfo->address, AF_UNSPEC, get_port_redirect(48010), &RemoteAddr, &RemoteAddrLen);
     }
     if (err != 0) {
         Limelog("failed: %d\n", err);

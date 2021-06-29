@@ -3,7 +3,8 @@
 #define FIRST_FRAME_MAX 1500
 #define FIRST_FRAME_TIMEOUT_SEC 10
 
-#define FIRST_FRAME_PORT 47996
+#define RTP_PORT (get_port_redirect(47998))
+#define FIRST_FRAME_PORT (get_port_redirect(47996))
 
 #define RTP_RECV_BUFFER (512 * 1024)
 

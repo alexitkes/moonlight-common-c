@@ -56,21 +56,21 @@ unsigned short LiGetPortFromPortFlagIndex(int portFlagIndex)
     {
         // TCP ports
         case ML_PORT_INDEX_TCP_47984:
-            return 47984;
+            return get_port_redirect(47984);
         case ML_PORT_INDEX_TCP_47989:
-            return 47989;
+            return get_port_redirect(47989);
         case ML_PORT_INDEX_TCP_48010:
-            return 48010;
+            return get_port_redirect(48010);
 
         // UDP ports
         case ML_PORT_INDEX_UDP_47998:
-            return 47998;
+            return get_port_redirect(47998);
         case ML_PORT_INDEX_UDP_47999:
-            return 47999;
+            return get_port_redirect(47999);
         case ML_PORT_INDEX_UDP_48000:
-            return 48000;
+            return get_port_redirect(48000);
         case ML_PORT_INDEX_UDP_48010:
-            return 48010;
+            return get_port_redirect(48010);
 
         default:
             LC_ASSERT(false);
